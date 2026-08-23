@@ -1,0 +1,20 @@
+# Flare Technologies
+
+Flare Technologies is a web development and AI automation company
+based in Bangalore, India. We build websites, apps, and smart
+automation systems for businesses.
+
+## Services
+
+- Web Development
+- AI Automation
+- Cloud Infrastructure
+- Digital Marketing
+- Consulting & Strategy
+- B2B Partnerships
+
+## Contact
+
+- Website: https://www.flaretechnologies.in
+- Email: marketing@flaretechnologies.in
+- Phone: +91 78991 04311

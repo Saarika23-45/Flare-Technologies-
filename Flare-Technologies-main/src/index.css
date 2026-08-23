@@ -1,0 +1,365 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 10%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+
+  html[data-theme='dark'] {
+    --theme-bg-main: #0f172a;
+    --theme-bg-soft: #13213a;
+    --theme-surface: rgba(15, 23, 42, 0.76);
+    --theme-border: rgba(148, 163, 184, 0.24);
+    --theme-text-primary: #f8fafc;
+    --theme-text-secondary: #cbd5e1;
+    --theme-text-muted: rgba(226, 232, 240, 0.78);
+    --theme-primary: #2563eb;
+    --theme-accent: #06b6d4;
+    --theme-grid-line: rgba(148, 163, 184, 0.1);
+  }
+
+  html[data-theme='light'] {
+    --theme-bg-main: #f8fafc;
+    --theme-bg-soft: #e2e8f0;
+    --theme-surface: rgba(255, 255, 255, 0.92);
+    --theme-border: rgba(15, 23, 42, 0.14);
+    --theme-text-primary: #0f172a;
+    --theme-text-secondary: #334155;
+    --theme-text-muted: rgba(51, 65, 85, 0.8);
+    --theme-primary: #2563eb;
+    --theme-accent: #06b6d4;
+    --theme-grid-line: rgba(15, 23, 42, 0.08);
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+}
+
+@layer base {
+  body {
+    background-color: var(--theme-bg-main);
+    color: var(--theme-text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+@layer utilities {
+  @keyframes fade-in-down {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-down {
+    animation: fade-in-down 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+  }
+  .animation-delay-800 {
+    animation-delay: 0.8s;
+  }
+
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(180deg, rgba(6, 11, 23, 0.75), rgba(6, 11, 23, 0.98));
+  }
+
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .flare-glow-border {
+    border: 1px solid hsla(var(--primary), 0.4);
+    box-shadow: 0 0 20px hsla(var(--primary), 0.15);
+  }
+
+  .flare-gradient-text {
+    background: linear-gradient(90deg, var(--theme-primary), var(--theme-accent), var(--theme-primary));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+  }
+
+  .flare-button {
+    background: linear-gradient(135deg, var(--theme-primary), var(--theme-accent));
+    color: #f8fafc;
+    font-weight: 700;
+    border-radius: 999px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    border: none;
+    padding: 0.95rem 2.2rem;
+    min-height: 52px;
+    letter-spacing: 0.02em;
+    box-shadow: 0 12px 35px color-mix(in srgb, var(--theme-primary) 22%, transparent);
+  }
+
+  .flare-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 45px color-mix(in srgb, var(--theme-primary) 28%, transparent);
+  }
+}
+
+/* Responsive Utilities */
+@media (max-width: 767px) {
+    .glass-panel {
+        padding: 1.25rem;
+    }
+
+    .flare-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .text-4xl {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .text-5xl, .text-6xl {
+        font-size: 2.25rem !important;
+        line-height: 1.1 !important;
+    }
+
+    /* Ensure pages don't get hidden under the fixed navbar */
+    .pt-24 {
+        padding-top: 5rem !important;
+    }
+}
+
+/* --- Refined Navbar Styling --- */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem;
+    background: color-mix(in srgb, var(--theme-bg-main) 84%, transparent);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--theme-border);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.header.scrolled {
+    height: 80px;
+    background: color-mix(in srgb, var(--theme-bg-main) 92%, transparent);
+}
+
+.header.hide-nav {
+    transform: translateY(-100%);
+}
+
+/* Navbar logo — rich colors, darker contrast, visible in light & dark mode */
+.header .brand-logo {
+    height: 55px;
+    width: auto;
+    max-width: 190px;
+    object-fit: contain;
+    mix-blend-mode: normal !important;
+    opacity: 1 !important;
+    filter: contrast(1.35) saturate(1.2) brightness(0.82)
+        drop-shadow(0 1px 3px rgba(0, 0, 0, 0.45)) !important;
+}
+
+.header.scrolled .brand-logo {
+    height: 48px;
+}
+
+@media (max-width: 768px) {
+    .header .brand-logo {
+        height: 44px;
+        max-width: 150px;
+    }
+
+    .header.scrolled .brand-logo {
+        height: 40px;
+    }
+}
+
+.nav a {
+    color: var(--theme-text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 1.5rem;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.nav a:hover {
+    opacity: 1;
+    color: var(--theme-primary);
+    filter: drop-shadow(0 0 8px color-mix(in srgb, var(--theme-primary) 40%, transparent));
+}
+
+.btn-header-primary {
+    color: var(--theme-text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-left: 1.5rem;
+    transition: all 0.3s ease;
+    opacity: 1;
+    border: 1px solid var(--theme-border);
+    padding: 0.6rem 1.4rem;
+    border-radius: 99px;
+}
+
+.btn-header-primary:hover {
+    background: color-mix(in srgb, var(--theme-primary) 14%, transparent);
+    color: var(--theme-primary);
+    border-color: color-mix(in srgb, var(--theme-primary) 42%, var(--theme-border));
+    filter: drop-shadow(0 0 15px color-mix(in srgb, var(--theme-primary) 28%, transparent));
+}
+
+@media (max-width: 1024px) {
+    .header {
+        padding: 0 1.5rem;
+    }
+}
+
+/* Palette normalization across existing utility classes */
+.bg-\[\#060b17\],
+.bg-\[\#05070a\],
+.bg-\[\#0a0f1e\] {
+  background-color: var(--theme-bg-main) !important;
+}
+
+.text-\[\#00D4FF\],
+.text-\[\#7DD3FC\],
+.text-\[\#FF8C00\] {
+  color: var(--theme-primary) !important;
+}
+
+.bg-\[\#00D4FF\] {
+  background-color: var(--theme-primary) !important;
+}
+
+.hover\:bg-\[\#00B8DE\]:hover {
+  background-color: color-mix(in srgb, var(--theme-primary) 84%, black) !important;
+}
+
+.from-\[\#00D4FF\] {
+  --tw-gradient-from: var(--theme-primary) var(--tw-gradient-from-position) !important;
+}
+
+.to-\[\#7DD3FC\] {
+  --tw-gradient-to: var(--theme-accent) var(--tw-gradient-to-position) !important;
+}
+
+.text-gray-400,
+.text-gray-500 {
+  color: var(--theme-text-secondary) !important;
+}
+
+.text-white {
+  color: var(--theme-text-primary) !important;
+}
+
+html[data-theme='light'] .section-badge {
+  color: var(--theme-primary) !important;
+}

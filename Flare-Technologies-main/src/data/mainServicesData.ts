@@ -1,0 +1,217 @@
+export interface MainService {
+  slug: string;
+  label: string;
+  headline: string;
+  tagline: string;
+  color: string;
+  heroImage: string;
+  subServices: { title: string; desc: string }[];
+  process: { title: string; desc: string }[];
+  outcomes: string[];
+}
+
+export const mainServicesData: MainService[] = [
+  {
+    slug: 'automated-systems',
+    label: 'Automated Systems',
+    headline: 'Scale Your Output Without Scaling Your Headcount',
+    tagline: 'We help businesses streamline operations by automating repetitive tasks and improving efficiency through intelligent systems.',
+    color: '#00D4FF',
+    heroImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80&auto=format&fit=crop',
+    subServices: [
+      { title: 'Process Automation', desc: 'Eliminate manual data entry and repetitive workflows.' },
+      { title: 'AI Chatbots & Digital Agents', desc: 'Deploy 24/7 intelligent agents to handle support and sales.' },
+      { title: 'Workflow Automation', desc: 'Connect disparate apps into seamless, robust pipelines.' },
+      { title: 'CRM Automation', desc: 'Supercharge your CRM to execute follow-ups automatically.' },
+      { title: 'Business Process Optimization', desc: 'Rebuild legacy frameworks into high-performance standard procedures.' },
+    ],
+    process: [
+      { title: 'Discovery', desc: 'We audit your daily manual tasks to identify high-ROI automation targets.' },
+      { title: 'Design', desc: 'We architect custom workflow scripts that connect your existing applications.' },
+      { title: 'Deployment', desc: 'We launch and rigorously test the automation pipelines without business interruption.' },
+      { title: 'Integration', desc: 'We connect the automation to your existing tools, CRMs, and dashboards.' },
+      { title: 'Monitoring', desc: 'We track performance and fine-tune workflows to ensure continuous efficiency.' },
+    ],
+    outcomes: [
+      'Reduce human error by 99%',
+      'Save hundreds of weekly hours',
+      'Accelerate turnaround times',
+      'Lower operational costs significantly',
+      'Free your team for higher-value work',
+    ],
+  },
+  {
+    slug: 'engineering-development',
+    label: 'Engineering & Development',
+    headline: 'Build Products That Are Meant to Last',
+    tagline: 'We design and build reliable, scalable digital products and infrastructure tailored to your business needs.',
+    color: '#FF00A8',
+    heroImage: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&q=80&auto=format&fit=crop',
+    subServices: [
+      { title: 'Custom Web Development', desc: 'Build fast, scalable websites tailored to your business goals.' },
+      { title: 'Mobile App Development', desc: 'Create intuitive apps that users rely on every day.' },
+      { title: 'API Development & Integration', desc: 'Connect your systems with powerful, reliable API architecture.' },
+      { title: 'E-commerce Development', desc: 'Launch high-converting online stores built for growth.' },
+      { title: 'UI/UX Design', desc: 'Design interfaces that are beautiful, functional, and conversion-focused.' },
+    ],
+    process: [
+      { title: 'Discovery', desc: 'We understand your product vision, users, and technical requirements in depth.' },
+      { title: 'Architecture', desc: 'We design the system structure, tech stack, and development roadmap.' },
+      { title: 'Development', desc: 'We build in agile sprints with regular demos and feedback checkpoints.' },
+      { title: 'Testing', desc: 'We run thorough QA across devices, browsers, and load conditions.' },
+      { title: 'Launch & Support', desc: 'We deploy your product and stay on for post-launch stability and improvements.' },
+    ],
+    outcomes: [
+      'Production-ready code from day one',
+      'Scalable architecture that grows with your business',
+      'Faster time to market with agile delivery',
+      'Reduced technical debt from the start',
+      'Ongoing support so nothing breaks silently',
+    ],
+  },
+  {
+    slug: 'growth-marketing',
+    label: 'Growth & Marketing',
+    headline: 'Turn Visibility Into Revenue',
+    tagline: 'We support businesses in expanding their reach, improving visibility, and increasing conversions through strategic marketing solutions.',
+    color: '#00FFA3',
+    heroImage: 'https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=1200&q=80&auto=format&fit=crop',
+    subServices: [
+      { title: 'SEO & Content Strategy', desc: 'Rank higher, attract the right audience, and build long-term organic traffic.' },
+      { title: 'Performance Marketing', desc: 'Run paid campaigns across Google and Meta that convert, not just click.' },
+      { title: 'Social Media Management', desc: 'Build a consistent brand presence that earns trust and engagement.' },
+      { title: 'Email Marketing & Nurturing', desc: 'Keep your pipeline warm with automated, personalised email sequences.' },
+      { title: 'Conversion Rate Optimisation', desc: 'Turn existing traffic into more leads without spending more on ads.' },
+    ],
+    process: [
+      { title: 'Audit', desc: 'We analyse your current digital presence, competitors, and growth gaps.' },
+      { title: 'Strategy', desc: 'We build a channel-specific growth plan tied to measurable business outcomes.' },
+      { title: 'Execution', desc: 'We create and launch campaigns, content, and ads with precision targeting.' },
+      { title: 'Optimisation', desc: 'We test, iterate, and double down on what is actually working.' },
+      { title: 'Reporting', desc: 'We deliver clear performance reports so every decision is backed by data.' },
+    ],
+    outcomes: [
+      'More qualified leads, less wasted spend',
+      'Higher organic visibility month over month',
+      'Stronger brand recall across channels',
+      'Shorter sales cycles through better nurturing',
+      'Transparent ROI on every marketing rupee spent',
+    ],
+  },
+  {
+    slug: 'consulting-strategy',
+    label: 'Consulting & Strategy',
+    headline: 'Clarity Before You Commit a Single Rupee',
+    tagline: 'We provide expert guidance to help businesses implement the right systems and strategies for long-term growth.',
+    color: '#FFB800',
+    heroImage: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80&auto=format&fit=crop',
+    subServices: [
+      { title: 'Digital Transformation Consulting', desc: 'Map a clear path from where you are to where you need to be.' },
+      { title: 'Technology Roadmapping', desc: 'Define the tools, systems, and timelines your business needs to scale.' },
+      { title: 'Go-To-Market Strategy', desc: 'Launch new products or enter new markets with a structured, researched plan.' },
+      { title: 'Business Process Consulting', desc: 'Identify bottlenecks and redesign operations for maximum efficiency.' },
+      { title: 'Growth Strategy & Advisory', desc: 'Get expert guidance on revenue models, positioning, and expansion.' },
+    ],
+    process: [
+      { title: 'Discovery', desc: 'We conduct deep-dive sessions with your leadership to understand goals and constraints.' },
+      { title: 'Research', desc: 'We analyse your market, competitors, and internal operations objectively.' },
+      { title: 'Strategy Design', desc: 'We build a clear, prioritised roadmap with timelines and ownership.' },
+      { title: 'Alignment', desc: 'We present the strategy to your team and ensure complete buy-in before execution.' },
+      { title: 'Implementation Support', desc: 'We stay involved during rollout to course-correct in real time.' },
+    ],
+    outcomes: [
+      'Eliminate costly decisions made without data',
+      'Align your entire team around one clear direction',
+      'Enter new markets with a tested, structured plan',
+      'Reduce wasted time on initiatives that don\'t move the needle',
+      'Build a technology foundation that supports long-term growth',
+    ],
+  },
+  {
+    slug: 'cloud-infrastructure',
+    label: 'Cloud Infrastructure',
+    headline: 'Build on a Foundation That Never Lets You Down',
+    tagline: 'We build and manage secure, high-performance cloud environments that scale effortlessly with your business demands.',
+    color: '#5B6BFF',
+    heroImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80&auto=format&fit=crop',
+    subServices: [
+      { title: 'Cloud Setup & Migration', desc: 'Move your systems to the cloud with zero downtime and full data integrity.' },
+      { title: 'DevOps & CI/CD Pipelines', desc: 'Automate your deployment process for faster, safer releases.' },
+      { title: 'Cloud Cost Optimisation', desc: 'Audit and restructure your cloud spend to eliminate waste.' },
+      { title: 'Security & Compliance', desc: 'Implement access controls, encryption, and compliance frameworks.' },
+      { title: 'Managed Cloud Support', desc: 'Ongoing monitoring, patching, and performance management of your infrastructure.' },
+    ],
+    process: [
+      { title: 'Assessment', desc: 'We audit your existing infrastructure and identify migration and optimisation opportunities.' },
+      { title: 'Architecture Design', desc: 'We design a scalable, secure cloud environment tailored to your workload.' },
+      { title: 'Migration', desc: 'We move your systems, data, and applications with a zero-disruption strategy.' },
+      { title: 'Hardening', desc: 'We apply security layers, backups, and monitoring from day one.' },
+      { title: 'Ongoing Management', desc: 'We manage, monitor, and optimise your cloud environment continuously.' },
+    ],
+    outcomes: [
+      '99.9% uptime with redundant, fault-tolerant systems',
+      'Faster deployments with automated CI/CD pipelines',
+      'Significant reduction in cloud infrastructure costs',
+      'Enterprise-grade security without enterprise complexity',
+      'Your team ships faster without worrying about the infrastructure',
+    ],
+  },
+  {
+    slug: 'ai-solutions',
+    label: 'AI Solutions',
+    headline: 'Put Intelligence at the Core of Your Business',
+    tagline: 'We integrate cutting-edge AI technologies into your business to enhance decision-making and automate complex tasks.',
+    color: '#A85BFF',
+    heroImage: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1200&q=80&auto=format&fit=crop',
+    subServices: [
+      { title: 'AI Strategy & Readiness Assessment', desc: 'Understand where AI can create the most value in your business.' },
+      { title: 'Custom AI Model Development', desc: 'Build and train models specific to your data and business problems.' },
+      { title: 'AI-Powered Analytics', desc: 'Surface patterns, predictions, and insights your team can act on immediately.' },
+      { title: 'Natural Language Processing', desc: 'Build systems that understand, process, and respond to human language.' },
+      { title: 'AI Integration into Existing Products', desc: 'Embed intelligent features into your current software without rebuilding from scratch.' },
+    ],
+    process: [
+      { title: 'Assessment', desc: 'We identify the highest-value AI opportunities within your existing operations and data.' },
+      { title: 'Data Preparation', desc: 'We clean, structure, and prepare your data to make it model-ready.' },
+      { title: 'Model Development', desc: 'We build, train, and validate AI models against your specific use cases.' },
+      { title: 'Integration', desc: 'We embed the AI layer into your products, workflows, or dashboards seamlessly.' },
+      { title: 'Iteration', desc: 'We monitor model performance and retrain as your data and business evolve.' },
+    ],
+    outcomes: [
+      'Make smarter decisions faster with real-time intelligence',
+      'Predict customer behaviour and market trends before they happen',
+      'Automate complex decisions that previously required human judgment',
+      'Build a competitive moat through proprietary AI capabilities',
+      'Scale intelligence across your business without scaling headcount',
+    ],
+  },
+  {
+    slug: 'b2b-partnerships',
+    label: 'B2B Partnerships',
+    headline: 'More Than a Vendor. A Growth Partner.',
+    tagline: 'We work with businesses that need a reliable, long-term technology and growth partner — not just a one-time service provider. Our B2B partnerships are built around your goals, your scale, and your timeline.',
+    color: '#FF8C00',
+    heroImage: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200&q=80&auto=format&fit=crop',
+    subServices: [
+      { title: 'Dedicated Account Management', desc: 'A single point of contact who knows your business inside out and is always available.' },
+      { title: 'Custom Retainer Plans', desc: 'Monthly engagements with clearly defined deliverables, timelines, and ownership.' },
+      { title: 'White-label Services', desc: 'Agencies and resellers can deliver Flare\'s full capabilities under their own brand.' },
+      { title: 'SLA-backed Commitments', desc: 'Guaranteed response times, delivery timelines, and uptime promises in writing.' },
+      { title: 'End-to-End Project Ownership', desc: 'We handle strategy, execution, and delivery — you stay focused on your business.' },
+    ],
+    process: [
+      { title: 'Discovery Call', desc: 'We understand your business, current challenges, goals, and scale requirements.' },
+      { title: 'Custom Proposal', desc: 'We put together a tailored engagement plan — scope, timelines, team, and pricing.' },
+      { title: 'Onboarding', desc: 'We set up communication, workflows, and access so everything runs smoothly from day one.' },
+      { title: 'Execution', desc: 'We deliver consistently against agreed milestones with full transparency throughout.' },
+      { title: 'Review & Scale', desc: 'We do regular performance reviews and evolve the engagement as your business grows.' },
+    ],
+    outcomes: [
+      'One trusted partner across tech, marketing, cloud, and AI — no vendor juggling',
+      'Predictable monthly costs with clear deliverables and zero surprises',
+      'Faster execution because we already know your business deeply',
+      'White-label ready for agencies looking to expand their service offering',
+      'A long-term relationship that compounds in value the longer we work together',
+    ],
+  },
+];
